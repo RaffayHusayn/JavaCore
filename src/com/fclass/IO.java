@@ -25,6 +25,7 @@ public class IO {
                 gpaFloat = Float.parseFloat(gpa);
                 flag = true;
             }catch(NumberFormatException nfe){
+                System.out.println("You didn't enter a number, stupid");
                 System.out.println(nfe);
             }catch (Exception e) {
                 System.out.println(e);
