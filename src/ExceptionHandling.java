@@ -1,3 +1,5 @@
+import com.fclass.CustomException;
+
 import java.util.Arrays;
 
 public class ExceptionHandling {
@@ -5,13 +7,19 @@ public class ExceptionHandling {
     public static void main(String[] args){
         int[] numbers = {1,2,3,4,5};
         String name = "Raffay";
-        int numerator = 8;
+        int numerator = 12;
         int result;
         try{
 
-           result = numerator/0;
+           result = numerator/2;
+           if(result> 5){
+               throw new CustomException("Result is larger than 5; choose a smaller numerator");
+           }
             numbers[5] = 6;
             System.out.println(name.substring(2,6));
+        }catch(CustomException ce){
+            System.out.println(ce.getMessage());
+
         }
         catch(IndexOutOfBoundsException ie ){
             System.out.println(ie.getMessage());
@@ -31,7 +39,7 @@ public class ExceptionHandling {
             System.out.println(e.toString());
         }
         finally{
-            System.out.println(Arrays.toString(numbers));
+            System.out.println("\n" + Arrays.toString(numbers));
         }
     }
 }
