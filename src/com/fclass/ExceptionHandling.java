@@ -1,3 +1,5 @@
+package com.fclass;
+
 import com.fclass.CustomException;
 
 import java.util.Arrays;
