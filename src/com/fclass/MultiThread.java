@@ -37,8 +37,8 @@ class Age implements Runnable {
 
         public static void main(String[] args) {
 
-            Name obj1 = new Name();
-            Age obj2 = new Age();
+            Runnable obj1 = new Name();
+            Runnable obj2 = new Age();
 
             Thread t1 = new Thread(obj1, "name - thread");
             Thread t2 = new Thread(obj2, "Age - thread");
