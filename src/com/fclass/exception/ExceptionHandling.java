@@ -1,6 +1,6 @@
-package com.fclass;
+package com.fclass.exception;
 
-import com.fclass.CustomException;
+import com.fclass.exception.CustomException;
 
 import java.util.Arrays;
 

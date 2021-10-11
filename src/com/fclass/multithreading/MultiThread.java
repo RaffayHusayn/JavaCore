@@ -1,4 +1,4 @@
-package com.fclass;
+package com.fclass.multithreading;
 class Name implements Runnable{
 
 

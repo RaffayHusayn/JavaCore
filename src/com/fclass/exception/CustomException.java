@@ -1,4 +1,4 @@
-package com.fclass;
+package com.fclass.exception;
 
 public class CustomException extends Exception {
 

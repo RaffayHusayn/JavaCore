@@ -1,4 +1,4 @@
-package com.fclass;
+package com.fclass.userinput;
 import java.util.Scanner;
 
 public class IO {

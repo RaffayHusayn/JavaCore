@@ -1,4 +1,4 @@
-package com.fclass;
+package com.fclass.multithreading;
 class NameThread implements Runnable{
     String name;
     public NameThread(String name){

@@ -1,4 +1,4 @@
-package com.fclass;
+package com.fclass.multithreading;
 
 public class LambdaMultiThread {
     public static void main(String[] args) {
