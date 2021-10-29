@@ -12,6 +12,10 @@ public class ReflectionPrivate {
         System.out.println(msg);
     }
 
+    private  void privatePrintMessage(String msg){
+        System.out.println(msg);
+    }
+
     public ReflectionPrivate(){
         System.out.println("object created without params");
     }

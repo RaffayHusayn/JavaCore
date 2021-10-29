@@ -3,8 +3,6 @@ package com.fclass.reflection;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.sql.Ref;
-import java.sql.SQLOutput;
 
 public class ReflectionMain {
     public static void main(String args[]) {
@@ -19,7 +17,7 @@ public class ReflectionMain {
         //Doing stuff with Methods of the class
         System.out.println();
         System.out.println("___________________Methods of the Class___________________________");
-        Method[] classMethods = ref.getMethods();
+        Method[] classMethods = ref.getDeclaredMethods(); //use ref.getMethod() to get all the public method + methods inherited from base class
         for (Method m : classMethods) {
 
             //Getting the names of the method
@@ -49,9 +47,14 @@ public class ReflectionMain {
         try {
             //CREATING AN OBJECT USING newInstance() method of Constructor class
             Constructor<ReflectionPrivate> cons = ReflectionPrivate.class.getConstructor();
-            Object obj = cons.newInstance();
-            Constructor<ReflectionPrivate> consWithParam = ReflectionPrivate.class.getConstructor(String.class, int.class);
-            Object objWithParam = consWithParam.newInstance("rax", 12);
+            ReflectionPrivate obj = cons.newInstance();
+
+
+            //do this or what's done, both are the same
+            //Constructor<ReflectionPrivate> consWithParam = ReflectionPrivate.class.getConstructor(String.class,int.class);
+            //ReflectionPrivate objWithParam = consWithParam.newInstance("some" , 12123);
+            Constructor consWithParam = ReflectionPrivate.class.getConstructor(String.class, int.class);
+            ReflectionPrivate objWithParam =(ReflectionPrivate) consWithParam.newInstance("rax", 12);
             System.out.println("classname: " + obj.getClass().getName());
             System.out.println("classname: " + objWithParam.getClass().getName());
 
