@@ -47,15 +47,24 @@ public class ReflectionMain {
         //Object Creation with default constructor and param constructor
         System.out.println("___________________________Object Creation___________________________");
         try {
-            Constructor<ReflectionPrivate> cons = ReflectionPrivate.class.getConstructor(String.class, int.class);
-            ReflectionPrivate obj = cons.newInstance("raff", 12312);
+            //CREATING AN OBJECT USING newInstance() method of Constructor class
+            Constructor<ReflectionPrivate> cons = ReflectionPrivate.class.getConstructor();
+            Object obj = cons.newInstance();
+            Constructor<ReflectionPrivate> consWithParam = ReflectionPrivate.class.getConstructor(String.class, int.class);
+            Object objWithParam = consWithParam.newInstance("rax", 12);
+            System.out.println("classname: " + obj.getClass().getName());
+            System.out.println("classname: " + objWithParam.getClass().getName());
 
 
-            Class c = Class.forName("com.fclass.reflection.ReflectionPrivate");
-            ReflectionPrivate obj1 = (ReflectionPrivate) c.getDeclaredConstructor().newInstance();
-            Method m1 = c.getDeclaredMethod("toString", null);
+            //CREATING AN OBJECT USING newInstance() method of Class class
+            Class c =Class.forName("com.fclass.reflection.ReflectionPrivate");
+            Object o1 = c.newInstance();
+            System.out.println("classname: "+ o1.getClass().getName());
+            Method m1 = c.getDeclaredMethod("printMessage", String.class);
             m1.setAccessible(true);
-            m1.invoke(obj1, null);
+            m1.invoke(o1, "Nabia");
+
+
         } catch (Exception e) {
             System.out.println("something wrong : " + e);
         }
